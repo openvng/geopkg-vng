@@ -189,16 +189,27 @@ public class GeoPkgDialect extends PreparedStatementSQLDialect {
         // not mapped to raw SQL types by org.sqlite.jdbc3.JDBC3DatabaseMetaData.getTypeInfo()
 
         // Numbers
-        overrides.put(Types.BOOLEAN, "BOOLEAN");
-        overrides.put(Types.SMALLINT, "SMALLINT");
-        overrides.put(Types.BIGINT, "BIGINT");
-        overrides.put(Types.DOUBLE, "DOUBLE");
+        //overrides.put(Types.BOOLEAN, "BOOLEAN");
+        //overrides.put(Types.SMALLINT, "SMALLINT");
+        //overrides.put(Types.BIGINT, "BIGINT");
+        //overrides.put(Types.DOUBLE, "DOUBLE");
+        //overrides.put(Types.NUMERIC, "NUMERIC");
+
+        // Temporal
+        //overrides.put(Types.DATE, "DATE");
+        //overrides.put(Types.TIME, "TIME");
+        //overrides.put(Types.TIMESTAMP, "TIMESTAMP");
+
+        overrides.put(Types.BOOLEAN, "NUMERIC");
+        overrides.put(Types.SMALLINT, "NUMERIC");
+        overrides.put(Types.BIGINT, "NUMERIC");
+        overrides.put(Types.DOUBLE, "NUMERIC");
         overrides.put(Types.NUMERIC, "NUMERIC");
 
         // Temporal
-        overrides.put(Types.DATE, "DATE");
-        overrides.put(Types.TIME, "TIME");
-        overrides.put(Types.TIMESTAMP, "TIMESTAMP");
+        overrides.put(Types.DATE, "TEXT");
+        overrides.put(Types.TIME, "TEXT");
+        overrides.put(Types.TIMESTAMP, "TEXT");
     }
 
     @Override
